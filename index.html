@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>reveal.js</title>
+
+  <link rel="stylesheet" href="dist/reset.css">
+  <link rel="stylesheet" href="dist/reveal.css">
+  <link rel="stylesheet" href="dist/theme/black.css">
+  <link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+  <style>
+#floatingVideo {
+  position: fixed;
+  top: 4%;
+  left: 5%;
+
+  /* 🔥 Remove hardcoded pixel sizes */
+  /* width: 800px; */
+  /* height: 980px; */
+
+  /* ✅ Responsive size to match the .border box */
+  width: 40vw;        /* Adjust as needed */
+  height: 51.5vw;       /* Matches min-height of .border */
+
+  object-fit: cover;
+  z-index: 1;
+  border: 5px solid white;
+  border-radius: 5%;
+  display: none;
+
+  -webkit-mask-image: radial-gradient(circle 300px at center, rgba(63,94,251,1) 0%, rgba(252,134,70,0) 100%);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-image: radial-gradient(circle 800px at center, rgba(63,94,251,1) 98%, rgba(63,94,251,0) 100%);
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+  
+	/* Other styles (.textbox, .reveal .slides section > *, .border, #test-paragraph) remain the same */
+	.textbox {
+	  background-color: transparent;
+	  color: white;
+	  padding: 1em;
+	  border-radius: 8px;
+	  /*width: fit-content;*/
+	  position: absolute;
+	  top: -50%;
+	  left: 5%;
+	  font-size: .5em;
+	  border: 3px solid white;
+	  overflow: hidden;
+	  align-items: center;
+	  z-index: 2;
+	}
+  
+	.reveal .slides section > * {
+	  position: relative;
+	  z-index: 2;
+	}
+  
+	.border {
+  background-color: transparent;
+  color: white;
+  padding: 1em;
+  border-radius: 8px;
+
+  /* 🔥 Remove this */
+  /* width: fit-content; */
+
+  /* ✅ Add this */
+  width: 35%; /* Or whatever % or px value works with your layout */
+  max-width: 10vw; /* Responsive limit */
+  min-width: 30vw; /* Avoid being too narrow */
+
+  max-height: 20vw;
+  min-height: 35vw;
+
+  position: fixed;
+  top: -100px;
+  left: 10%;
+  font-size: 1em;
+  border: 3px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  z-index: 2;
+}
+
+/* Optional: style the <ul> inside .border */
+.border ul {
+  padding-left: 1em;
+  font-size: 0.9em;
+  margin-top: 0.5em;
+}
+
+.border li {
+  margin-bottom: 0.3em;
+}
+
+  
+#test-paragraph {
+  position: fixed; /* or 'fixed', depending on your layout */
+  top: 75%;
+  left: 50%;
+  /*transform: translate(-50%, -50%);*/
+  max-width: 800vw;
+  max-height: 400vh;
+  overflow: auto;
+  box-sizing: border-box;
+}
+  </style>
+</head>
+<body>
+
+  <div class="reveal">
+    <!-- ✅ Floating Video sits above background but below content -->
+    <video id="floatingVideo" autoplay muted loop playsinline>
+      <source id="floatingVideoSource" src="" type="video/mp4">
+    </video>
+
+    <div class="slides">
+
+	  <section
+	  data-video-transition="media/Person_To_Cube.webm,media/Web_Loop.webm"
+		data-video="media/Swirl_Loop.webm"
+		data-x="1%"
+		data-y="4%"
+		data-vidoe-muted
+		data-background-video="media/Marble_Wobble_head1300-13878.mp4"
+		data-background-video-loop
+		data-background-video-muted>
+		<div id="test-paragraph" class="border">
+			<p>
+			<b>
+				Importance
+			</b>
+			</p>
+			  <ul>
+				<li>Pervasive in all facates</li>
+				<li>90% use it for news and happenings  <em>Pew Research, 2021</em> </li>
+		</div>
+	</section>
+
+	<section
+	  data-video-transition=""
+	  data-video="media/Algo.webm"
+	  data-x="1%"
+	  data-y="4%"
+	  data-vidoe-muted
+	  data-background-video="media/Marble_Wobble_head1300-13878.mp4"
+	  data-background-video-loop
+	  data-background-video-muted>
+	  <div id="test-paragraph" class="border">
+		  <p>
+		  <b>
+			  Curated Culture
+		  </b>
+		  </p>
+			<ul>
+			  <li>Shaping of culture</li>
+			  <li>We're shown what's popular around us, not to you</li>
+			  <li>A growing and shrinking Internet</li>
+	  </div>
+  	</section>
+
+	  <section
+	  data-video-transition="media/Cube_Rise.webm,media/Signal_Into.webm"
+	  data-video="media/Signal_Loop.webm"
+	  data-x="1%"
+	  data-y="4%"
+	  data-vidoe-muted
+	  data-background-video="media/Marble_Wobble_head1300-13878.mp4"
+	  data-background-video-loop
+	  data-background-video-muted>
+	  <div id="test-paragraph" class="border">
+		  <p>
+		  <b>
+			  Algorithmic Measures
+		  </b>
+		  </p>
+			<ul>
+			  <li>Fewer places</li>
+			  <li>Retention is key</li>
+			  <li><em>If you're not paying for the product, you are the product</em></li>
+			  <li>Inaction is still action</li>
+			  <li>Black box and transparency</li>
+	  </div>
+  	</section>
+
+	  <section
+	  data-video-transition="media/Signal_End.webm,media/Cube_To_Person.webm,media/Group_Rising.webm,media/Swirl_Intro.webm"
+	  data-video="media/Swirl_Loop.webm"
+	  data-x="1%"
+	  data-y="4%"
+	  data-vidoe-muted
+	  data-background-video="media/Marble_Wobble_head1300-13878.mp4"
+	  data-background-video-loop
+	  data-background-video-muted>
+	  <div id="test-paragraph" class="border">
+		  <p>
+		  <b>
+			  Effects
+		  </b>
+		  </p>
+			<ul>
+			  <li>Fewer places</li>
+			  <li>Retention is key</li>
+			  <li><em>If you're not paying for the product, you are the product</em></li>
+			  <li>Inaction is still action</li>
+			  <li>Black box and transparency</li>
+	  </div>
+  	</section>
+
+	  <section
+	  data-video-transition="media/Swirl_End.webm,media/Group_Falling.webm,media/Group_Falling.webm,media/Swirl_Intro.webm"
+	  data-video="media/Web_Loop.webm"
+	  data-x="1%"
+	  data-y="4%"
+	  data-vidoe-muted
+	  data-background-video="media/Marble_Wobble_head1300-13878.mp4"
+	  data-background-video-loop
+	  data-background-video-muted>
+	  <div id="test-paragraph" class="border">
+		  <p>
+		  <b>
+			  Effects
+		  </b>
+		  </p>
+			<ul>
+			  <li>Fewer places</li>
+			  <li>Retention is key</li>
+			  <li><em>If you're not paying for the product, you are the product</em></li>
+			  <li>Inaction is still action</li>
+			  <li>Black box and transparency</li>
+	  </div>
+  	</section>
+
+    </div>
+  </div>
+
+  <script src="dist/reveal.js"></script>
+  <script src="plugin/notes/notes.js"></script>
+  <script src="plugin/markdown/markdown.js"></script>
+  <script src="plugin/highlight/highlight.js"></script>
+
+  <script>
+	Reveal.initialize({
+	  hash: true,
+	  progress: false,
+	  transition: 'none',
+	  plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+	});
+	
+	const floatingVideo = document.getElementById('floatingVideo');
+	const floatingSource = document.getElementById('floatingVideoSource');
+	
+	let playingMain = false;
+	
+	function playVideo(src, loop = false) {
+	  if (!src) return;
+	  floatingSource.src = src;
+	  floatingVideo.loop = loop;
+	  floatingVideo.load();
+	  floatingVideo.muted = true;
+	  floatingVideo.play().catch(e => console.warn("Autoplay blocked:", e));
+	  floatingVideo.style.display = 'block';
+	}
+	
+	function handleSlideVideo(slide) {
+	const transitionData = slide.getAttribute('data-video-transition');
+	const mainSrc = slide.getAttribute('data-video-main') || slide.getAttribute('data-video');
+
+	// Reset video state
+	floatingVideo.onended = null;
+	playingMain = false;
+
+	// Parse transition list into array (or empty array)
+	const transitionQueue = transitionData ? transitionData.split(',').map(s => s.trim()) : [];
+
+	function playNextInQueue(queue, onComplete) {
+		if (queue.length === 0) {
+			onComplete(); // No more transitions, play main
+			return;
+		}
+		const nextVideo = queue.shift();
+		playVideo(nextVideo, false);
+
+		floatingVideo.onended = () => {
+			floatingVideo.onended = null; // Clear to avoid stack
+			playNextInQueue(queue, onComplete);
+		};
+	}
+
+	if (transitionQueue.length > 0) {
+		playNextInQueue([...transitionQueue], () => {
+			if (mainSrc) {
+				playingMain = true;
+				playVideo(mainSrc, true);
+			}
+		});
+	} else if (mainSrc) {
+		playingMain = true;
+		playVideo(mainSrc, true);
+	} else {
+		floatingVideo.style.display = 'none';
+		floatingVideo.pause();
+		floatingSource.removeAttribute('src');
+	}
+}
+
+
+	
+	Reveal.on('ready', () => {
+	  const slide = Reveal.getCurrentSlide();
+	  handleSlideVideo(slide);
+	});
+	
+	Reveal.on('slidechanged', event => {
+	  handleSlideVideo(event.currentSlide);
+	});
+	</script>
+
+</body>
+</html>
